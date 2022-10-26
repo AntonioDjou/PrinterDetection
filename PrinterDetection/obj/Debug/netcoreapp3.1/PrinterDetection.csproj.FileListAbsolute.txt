@@ -1,0 +1,16 @@
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\bin\Debug\netcoreapp3.1\PrinterDetection.exe
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\bin\Debug\netcoreapp3.1\PrinterDetection.deps.json
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\bin\Debug\netcoreapp3.1\PrinterDetection.runtimeconfig.json
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\bin\Debug\netcoreapp3.1\PrinterDetection.runtimeconfig.dev.json
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\bin\Debug\netcoreapp3.1\PrinterDetection.dll
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\bin\Debug\netcoreapp3.1\PrinterDetection.pdb
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.csproj.AssemblyReference.cache
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.Form1.resources
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.csproj.GenerateResource.cache
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.AssemblyInfoInputs.cache
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.AssemblyInfo.cs
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.csproj.CoreCompileInputs.cache
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.dll
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.pdb
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.genruntimeconfig.cache
