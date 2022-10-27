@@ -36,6 +36,9 @@ namespace PrinterDetection
             this.printButton = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboPaperSize = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +60,7 @@ namespace PrinterDetection
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(41, 144);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(564, 276);
+            this.listBox1.Size = new System.Drawing.Size(564, 132);
             this.listBox1.TabIndex = 2;
             this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
             // 
@@ -95,12 +98,40 @@ namespace PrinterDetection
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(41, 302);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(325, 25);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(41, 352);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 17);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Tamanho da impressão:";
+            // 
+            // comboPaperSize
+            // 
+            this.comboPaperSize.FormattingEnabled = true;
+            this.comboPaperSize.Location = new System.Drawing.Point(41, 383);
+            this.comboPaperSize.Name = "comboPaperSize";
+            this.comboPaperSize.Size = new System.Drawing.Size(121, 25);
+            this.comboPaperSize.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(914, 510);
+            this.Controls.Add(this.comboPaperSize);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.printButton);
             this.Controls.Add(this.lblImpressoraPadrao);
             this.Controls.Add(this.listBox1);
@@ -121,6 +152,9 @@ namespace PrinterDetection
         private System.Windows.Forms.Button printButton;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboPaperSize;
     }
 }
 
