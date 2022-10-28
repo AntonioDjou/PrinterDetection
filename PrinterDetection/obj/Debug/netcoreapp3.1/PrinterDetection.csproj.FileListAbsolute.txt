@@ -15,3 +15,14 @@ C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcorea
 C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.pdb
 C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.genruntimeconfig.cache
 C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.SearchBoxForm.resources
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libsqlite3.so
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libsqlite3.dylib
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\sqlite3.dll
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\bin\Debug\netcoreapp3.1\runtimes\win7-x86\native\sqlite3.dll
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.csproj.CopyComplete
