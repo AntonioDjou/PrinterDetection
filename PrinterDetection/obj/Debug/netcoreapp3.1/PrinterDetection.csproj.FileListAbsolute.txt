@@ -14,3 +14,4 @@ C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcorea
 C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.dll
 C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.pdb
 C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.genruntimeconfig.cache
+C:\Users\khese\source\repos\PrinterDetection\PrinterDetection\obj\Debug\netcoreapp3.1\PrinterDetection.SearchBoxForm.resources

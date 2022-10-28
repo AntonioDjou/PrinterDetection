@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace PrinterDetection
 {
@@ -21,6 +22,7 @@ namespace PrinterDetection
         PaperSize pkCustomSize1;
         PaperSize pkCustomSize2;
 
+        public static SqlConnection cnn;
         
         public Form1()
         {
@@ -242,6 +244,29 @@ namespace PrinterDetection
 
                 //e.Graphics.DrawString($"R$ {orderJson.payment.total_w_tax} - {orderJson.payment.payment_formatted}", new Font("Arial", 6, FontStyle.Bold), Brushes.Black, new Point(5, 265));
             }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) // Se a pessoa apertou "Enter"
+            {
+                OrdersDataGridView.Visible = true;
+
+                //Falta conectar ao banco
+
+                SqlCommand sql = new SqlCommand("SELECT NOME, ORDER_ID FROM DAILY_ORDERS WHERE NOME LIKE @NOME ORDER BY NOME", cnn);
+                sql.Parameters.AddWithValue("@NOME", "%" + SearchTextBox.Text + "%");
+
+                SqlDataAdapter data = new SqlDataAdapter(sql);
+                DataSet tabela = new DataSet();
+                data.Fill(tabela);
+                OrdersDataGridView.DataSource = tabela.Tables[0];
+
+                OrdersDataGridView.Columns[0].Width = 200;
+                OrdersDataGridView.Columns[0].HeaderText = "Nome do Cliente";
+                OrdersDataGridView.Columns[1].Width = 100;
+                OrdersDataGridView.Columns[1].HeaderText = "Order Id";
+            } 
         }
     }
 }

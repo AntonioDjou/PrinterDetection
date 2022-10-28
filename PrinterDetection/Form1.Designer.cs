@@ -39,6 +39,9 @@ namespace PrinterDetection
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboPaperSize = new System.Windows.Forms.ComboBox();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.OrdersDataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.OrdersDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -60,7 +63,7 @@ namespace PrinterDetection
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(41, 144);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(564, 132);
+            this.listBox1.Size = new System.Drawing.Size(450, 132);
             this.listBox1.TabIndex = 2;
             this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
             // 
@@ -71,7 +74,7 @@ namespace PrinterDetection
             this.lblImpressoraPadrao.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblImpressoraPadrao.Location = new System.Drawing.Point(41, 97);
             this.lblImpressoraPadrao.Name = "lblImpressoraPadrao";
-            this.lblImpressoraPadrao.Size = new System.Drawing.Size(564, 26);
+            this.lblImpressoraPadrao.Size = new System.Drawing.Size(450, 26);
             this.lblImpressoraPadrao.TabIndex = 3;
             // 
             // printButton
@@ -120,8 +123,32 @@ namespace PrinterDetection
             this.comboPaperSize.FormattingEnabled = true;
             this.comboPaperSize.Location = new System.Drawing.Point(41, 383);
             this.comboPaperSize.Name = "comboPaperSize";
-            this.comboPaperSize.Size = new System.Drawing.Size(121, 25);
+            this.comboPaperSize.Size = new System.Drawing.Size(223, 25);
             this.comboPaperSize.TabIndex = 7;
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchTextBox.Font = new System.Drawing.Font("Franklin Gothic Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SearchTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.SearchTextBox.Location = new System.Drawing.Point(576, 97);
+            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(246, 29);
+            this.SearchTextBox.TabIndex = 8;
+            this.SearchTextBox.Text = "Buscar pedido";
+            this.SearchTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // OrdersDataGridView
+            // 
+            this.OrdersDataGridView.AllowUserToOrderColumns = true;
+            this.OrdersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.OrdersDataGridView.Location = new System.Drawing.Point(576, 125);
+            this.OrdersDataGridView.Name = "OrdersDataGridView";
+            this.OrdersDataGridView.RowTemplate.Height = 25;
+            this.OrdersDataGridView.Size = new System.Drawing.Size(246, 224);
+            this.OrdersDataGridView.TabIndex = 9;
+            this.OrdersDataGridView.Visible = false;
             // 
             // Form1
             // 
@@ -129,6 +156,8 @@ namespace PrinterDetection
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(914, 510);
+            this.Controls.Add(this.OrdersDataGridView);
+            this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.comboPaperSize);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
@@ -139,6 +168,7 @@ namespace PrinterDetection
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Name = "Form1";
             this.Text = "Impressoras do Sistema";
+            ((System.ComponentModel.ISupportInitialize)(this.OrdersDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,6 +185,8 @@ namespace PrinterDetection
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboPaperSize;
+        private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.DataGridView OrdersDataGridView;
     }
 }
 
