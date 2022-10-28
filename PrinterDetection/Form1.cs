@@ -18,14 +18,18 @@ namespace PrinterDetection
         public static extern bool SetDefaultPrinter(string Name);
 
         object selectedPaperSize;
+        PaperSize pkCustomSize1;
+        PaperSize pkCustomSize2;
 
-
+        
         public Form1()
         {
             InitializeComponent();
             GetImpressoras();
             lblImpressoraPadrao.Text = GetImpressoraPadrao();
             GetPaperSize();
+
+            
         }
 
         private void GetImpressoras()
@@ -61,33 +65,29 @@ namespace PrinterDetection
             // Add list of supported paper sizes found on the printer. 
             // The DisplayMember property is used to identify the property that will provide the display string.
             comboPaperSize.DisplayMember = "PaperName";
-
             var printDoc = new PrinterSettings();
 
-
             // Create a PaperSize and specify the custom paper size through the constructor and add to combobox.
-            PaperSize pkCustomSize1 = new PaperSize("80mm", 80, 100);
+            pkCustomSize1 = new PaperSize("80mm", 260, 375);
             comboPaperSize.Items.Add(pkCustomSize1);
-            PaperSize pkCustomSize2 = new PaperSize("58mm", 58, 100);
+            pkCustomSize2 = new PaperSize("58mm", 200, 290);
             comboPaperSize.Items.Add(pkCustomSize2);
-            //PaperSize pkCustomSize3 = new PaperSize("80mm x 80mm", 80, 80);
-            //comboPaperSize.Items.Add(pkCustomSize3);
-
-            /*PaperSize pkSize;
+            
+            PaperSize pkSize;
             for (int i = 0; i < printDoc.PaperSizes.Count; i++)
             {
                 pkSize = printDoc.PaperSizes[i];
                 comboPaperSize.Items.Add(pkSize);
             }
-            */
         }
 
         private void printButton_Click(object sender, EventArgs e)
         {
             selectedPaperSize = comboPaperSize.SelectedItem;
-            //string paperSize = Convert.ToString(selectedPaperSize);
-            
-            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 260, 500);
+            if (selectedPaperSize == null || selectedPaperSize == pkCustomSize1) printDocument1.DefaultPageSettings.PaperSize = pkCustomSize1;
+            else if (selectedPaperSize == pkCustomSize2) printDocument1.DefaultPageSettings.PaperSize = pkCustomSize2;
+
+            MessageBox.Show(printDocument1.DefaultPageSettings.PaperSize.ToString());
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
         }
@@ -132,10 +132,10 @@ namespace PrinterDetection
             //e.Graphics.DrawString($"R$ {orderJson.payment.total_w_tax} - {orderJson.payment.payment_formatted}", new Font("Arial", 8, FontStyle.Bold), Brushes.Black, new Point(5, 355));
 
 
-            if (selectedPaperSize == null || selectedPaperSize.ToString() == "[PaperSize 80mm Kind=Custom Height=100 Width=80]") // 80mm
+            if (selectedPaperSize == null || selectedPaperSize == pkCustomSize1) // 80mm
             {
                 e.Graphics.DrawString("Cliente", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 20));
-                e.Graphics.DrawString("_________________________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 22));
+                e.Graphics.DrawString("________________________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 22));
 
                 e.Graphics.DrawString($"Telefone:       (85) 98549.6894", new Font("Arial", 8), Brushes.Black, new Point(5, 40));
                 e.Graphics.DrawString($"Nome:           Antonio Paz", new Font("Arial", 8), Brushes.Black, new Point(5, 55));
@@ -144,7 +144,7 @@ namespace PrinterDetection
                 e.Graphics.DrawString($"Cidade:         Tianguá", new Font("Arial", 8), Brushes.Black, new Point(5, 90));
                 e.Graphics.DrawString($"CEP:              62320480", new Font("Arial", 8), Brushes.Black, new Point(5, 105));
                 e.Graphics.DrawString($"UF:  CE", new Font("Arial", 8), Brushes.Black, new Point(170, 105));
-                e.Graphics.DrawString("===============================", new Font("Arial", 10), Brushes.Black, new Point(0, 115));
+                e.Graphics.DrawString("==============================", new Font("Arial", 10), Brushes.Black, new Point(0, 115));
 
                 e.Graphics.DrawString($"Itens", new Font("Arial", 9, FontStyle.Bold), Brushes.Black, new Point(5, 130));
                 e.Graphics.DrawString("________________________________", new Font("Arial", 10), Brushes.Black, new Point(5, 135));
@@ -167,8 +167,9 @@ namespace PrinterDetection
                 e.Graphics.DrawString($"R$ 31,00 - PGTO COM DINHEIRO", new Font("Arial", 8, FontStyle.Bold), Brushes.Black, new Point(5, 355));
             }
 
-            else if (selectedPaperSize.ToString() == "[PaperSize 58mm Kind=Custom Height=100 Width=58]") // 58mm => Referência abaixo!
+            else if (selectedPaperSize == pkCustomSize2) // 58mm => Referência abaixo!
             {
+                
                 e.Graphics.DrawString("Cliente", new Font("Arial", 8, FontStyle.Bold), Brushes.Black, new Point(5, 15));
                 e.Graphics.DrawString("_____________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 16));
 
@@ -179,7 +180,7 @@ namespace PrinterDetection
                 e.Graphics.DrawString($"Cidade:         Tianguá", new Font("Arial", 6), Brushes.Black, new Point(5, 68));
                 e.Graphics.DrawString($"CEP:              62320480", new Font("Arial", 6), Brushes.Black, new Point(5, 78));
                 e.Graphics.DrawString($"UF:  CE", new Font("Arial", 6), Brushes.Black, new Point(130, 78));
-                e.Graphics.DrawString("===========================", new Font("Arial", 8), Brushes.Black, new Point(0, 88));
+                e.Graphics.DrawString("==========================", new Font("Arial", 8), Brushes.Black, new Point(0, 88));
 
                 e.Graphics.DrawString($"Itens", new Font("Arial", 7, FontStyle.Bold), Brushes.Black, new Point(5, 98));
                 e.Graphics.DrawString("_____________________", new Font("Arial", 10), Brushes.Black, new Point(5, 97));
