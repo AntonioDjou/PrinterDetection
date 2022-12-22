@@ -70,9 +70,9 @@ namespace PrinterDetection
             var printDoc = new PrinterSettings();
 
             // Create a PaperSize and specify the custom paper size through the constructor and add to combobox.
-            pkCustomSize1 = new PaperSize("80mm", 260, 375);
+            pkCustomSize1 = new PaperSize("80mm", 260, 500);
             comboPaperSize.Items.Add(pkCustomSize1);
-            pkCustomSize2 = new PaperSize("58mm", 200, 290);
+            pkCustomSize2 = new PaperSize("58mm", 200, 465);
             comboPaperSize.Items.Add(pkCustomSize2);
             
             PaperSize pkSize;
@@ -89,160 +89,109 @@ namespace PrinterDetection
             if (selectedPaperSize == null || selectedPaperSize == pkCustomSize1) printDocument1.DefaultPageSettings.PaperSize = pkCustomSize1;
             else if (selectedPaperSize == pkCustomSize2) printDocument1.DefaultPageSettings.PaperSize = pkCustomSize2;
 
-            MessageBox.Show(printDocument1.DefaultPageSettings.PaperSize.ToString());
+            //MessageBox.Show(printDocument1.DefaultPageSettings.PaperSize.ToString());
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            //----------------------------------//
-            //              80mm                // => Trocar pelo de dentro do "If"
-            //----------------------------------//
-            //e.Graphics.DrawString("Cliente", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 20));
-            //e.Graphics.DrawString("_________________________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 22));
-
-            //e.Graphics.DrawString($"Telefone:       {orderJson.deliveryAddress.contact_phone}", new Font("Arial", 8), Brushes.Black, new Point(5, 40));
-            //e.Graphics.DrawString($"Nome:           {orderJson.customer.name}", new Font("Arial", 8), Brushes.Black, new Point(5, 55));
-
-            //e.Graphics.DrawString($"Endereço:     {orderJson.deliveryAddress.street}, {orderJson.deliveryAddress.street_number}", new Font("Arial", 8), Brushes.Black, new Point(5, 75));
-            //e.Graphics.DrawString($"Cidade:         {orderJson.deliveryAddress.city}", new Font("Arial", 8), Brushes.Black, new Point(5, 90));
-            //e.Graphics.DrawString($"CEP:              {orderJson.deliveryAddress.zipcode}", new Font("Arial", 8), Brushes.Black, new Point(5, 105));
-            //e.Graphics.DrawString($"UF:  {orderJson.deliveryAddress.state}", new Font("Arial", 8), Brushes.Black, new Point(170, 105));
-            //e.Graphics.DrawString("===============================", new Font("Arial", 10), Brushes.Black, new Point(0, 115));
-
-            //e.Graphics.DrawString($"Itens", new Font("Arial", 9, FontStyle.Bold), Brushes.Black, new Point(5, 130));
-            //e.Graphics.DrawString("________________________________", new Font("Arial", 10), Brushes.Black, new Point(5, 135));
-            //e.Graphics.DrawString($"Descrição", new Font("Arial", 7, FontStyle.Italic), Brushes.Black, new Point(5, 153));
-            //e.Graphics.DrawString($"Qtde", new Font("Arial", 7, FontStyle.Italic), Brushes.Black, new Point(120, 153));
-            //e.Graphics.DrawString($"Valor Total", new Font("Arial", 7, FontStyle.Italic), Brushes.Black, new Point(190, 153));
-            //e.Graphics.DrawString("________________________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 155));
-
-            //for (int i = 0; i < orderJson.items.Count; i++) // Verificar se realmente é para usar o "Count" para detectar quantos pedidos tem
-            //{
-            //e.Graphics.DrawString($"{orderJson.items[i].name}", new Font("Arial", 7), Brushes.Black, new Point(5, 175));
-            //e.Graphics.DrawString($"{orderJson.items[i].qty}", new Font("Arial", 7), Brushes.Black, new Point(132, 175));
-            //e.Graphics.DrawString($"R${orderJson.items[i].normal_price}", new Font("Arial", 7), Brushes.Black, new Point(200, 175));
-            //} // Verificar também no caso de um pedido com 2 itens iguais, precisa multiplicar o "normal_price" da linha anterior pelo "qty" ou se esse atributo já é passado corretamente
-
-            //e.Graphics.DrawString("________________________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 270));
-            //e.Graphics.DrawString($"Valor do pedido:                           R$ {orderJson.items[0].normal_price}", new Font("Arial", 8), Brushes.Black, new Point(5, 290));
-            //e.Graphics.DrawString($"Taxa de Entrega:                          R$ {orderJson.delivery.charge}", new Font("Arial", 8), Brushes.Black, new Point(5, 305));
-            //e.Graphics.DrawString($"Total:                                             {orderJson.payment.total_w_tax}", new Font("Arial", 8), Brushes.Black, new Point(5, 320));
-            //e.Graphics.DrawString($"Valor pago pelo cliente:                R$ {orderJson.payment.total_w_tax}", new Font("Arial", 8), Brushes.Black, new Point(5, 335));
-
-            //e.Graphics.DrawString($"R$ {orderJson.payment.total_w_tax} - {orderJson.payment.payment_formatted}", new Font("Arial", 8, FontStyle.Bold), Brushes.Black, new Point(5, 355));
-
-
             if (selectedPaperSize == null || selectedPaperSize == pkCustomSize1) // 80mm
             {
-                e.Graphics.DrawString("Cliente", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 20));
-                e.Graphics.DrawString("________________________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 22));
-
-                e.Graphics.DrawString($"Telefone:       (85) 98549.6894", new Font("Arial", 8), Brushes.Black, new Point(5, 40));
-                e.Graphics.DrawString($"Nome:           Antonio Paz", new Font("Arial", 8), Brushes.Black, new Point(5, 55));
-
-                e.Graphics.DrawString($"Endereço:     Rua Dom Timóteo, 76", new Font("Arial", 8), Brushes.Black, new Point(5, 75));
-                e.Graphics.DrawString($"Cidade:         Tianguá", new Font("Arial", 8), Brushes.Black, new Point(5, 90));
-                e.Graphics.DrawString($"CEP:              62320480", new Font("Arial", 8), Brushes.Black, new Point(5, 105));
-                e.Graphics.DrawString($"UF:  CE", new Font("Arial", 8), Brushes.Black, new Point(170, 105));
-                e.Graphics.DrawString("==============================", new Font("Arial", 10), Brushes.Black, new Point(0, 115));
-
-                e.Graphics.DrawString($"Itens", new Font("Arial", 9, FontStyle.Bold), Brushes.Black, new Point(5, 130));
-                e.Graphics.DrawString("________________________________", new Font("Arial", 10), Brushes.Black, new Point(5, 135));
-                e.Graphics.DrawString($"Descrição", new Font("Arial", 7, FontStyle.Italic), Brushes.Black, new Point(5, 155));
-                e.Graphics.DrawString($"Qtde", new Font("Arial", 7, FontStyle.Italic), Brushes.Black, new Point(120, 155));
-                e.Graphics.DrawString($"Valor Total", new Font("Arial", 7, FontStyle.Italic), Brushes.Black, new Point(190, 155));
-                e.Graphics.DrawString("________________________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 156));
+                e.Graphics.DrawString("-----------------------------------------------------", new Font("Arial", 10), Brushes.Black, new Point(5, 5));
+                e.Graphics.DrawString("iFood", new Font("Arial", 5), Brushes.Black, new Point(115,17));
+                e.Graphics.DrawString("+--------------------------------------------------------------------------------------------------+", new Font("Arial", 5), Brushes.Black, new Point(12, 25));
+                e.Graphics.DrawString("|                                           PEDIDO #12345                                             |", new Font("Arial", 5), Brushes.Black, new Point(13, 32));
+                e.Graphics.DrawString("|                           LOCALIZADOR DO PEDIDO im2NcXDyVZ                    |", new Font("Arial", 5), Brushes.Black, new Point(13, 42));
+                e.Graphics.DrawString("|                                            ENTREGA PRÓPRIA                                    |", new Font("Arial", 5), Brushes.Black, new Point(13, 52));
+                e.Graphics.DrawString("+--------------------------------------------------------------------------------------------------+", new Font("Arial", 5), Brushes.Black, new Point(12, 60));
+                e.Graphics.DrawString("Restaurante: Eazy Teste", new Font("Arial", 5), Brushes.Black, new Point(5, 70));
+                e.Graphics.DrawString("Data: 22/12/2022 15:20:00", new Font("Arial", 5), Brushes.Black, new Point(5, 80));
+                e.Graphics.DrawString("Entrega prevista: 15:50", new Font("Arial", 5), Brushes.Black, new Point(5, 90));
+                e.Graphics.DrawString("Solicite o código de confirmação na hora da entrega", new Font("Arial", 5), Brushes.Black, new Point(5, 100));
+                e.Graphics.DrawString("+--------------------------------------------------------------------------------------------------+", new Font("Arial", 5), Brushes.Black, new Point(12, 120));
+                e.Graphics.DrawString("|                                                                                                                  |", new Font("Arial", 5), Brushes.Black, new Point(13, 130));
+                e.Graphics.DrawString("|   ** DEIXAR O PEDIDO EM: ENCONTRAR COM O ENTREGADOR **     |", new Font("Arial", 5), Brushes.Black, new Point(13, 140));
+                e.Graphics.DrawString("|                                                                                                                  |", new Font("Arial", 5), Brushes.Black, new Point(13, 150));
+                e.Graphics.DrawString("+--------------------------------------------------------------------------------------------------+", new Font("Arial", 5), Brushes.Black, new Point(12, 160));
+                e.Graphics.DrawString("Primeiro pedido na sua loja!", new Font("Arial", 5), Brushes.Black, new Point(5, 190));
+                e.Graphics.DrawString("Dados do cliente", new Font("Arial", 5), Brushes.Black, new Point(5, 210));
+                e.Graphics.DrawString("Nome: Samuel Vilela", new Font("Arial", 5), Brushes.Black, new Point(5, 220));
+                e.Graphics.DrawString("Telefone: +5537999943911", new Font("Arial", 5), Brushes.Black, new Point(5, 230));
+                e.Graphics.DrawString("ID: 11176", new Font("Arial", 5), Brushes.Black, new Point(100, 230));
+                e.Graphics.DrawString("Rua: Henrique Alberto Pepin, 313", new Font("Arial", 5), Brushes.Black, new Point(5, 240));
+                e.Graphics.DrawString("Bairro: Jardim Panorama II", new Font("Arial", 5), Brushes.Black, new Point(5, 250));
+                e.Graphics.DrawString("Cidade: Foz do Iguacu - PR", new Font("Arial", 5), Brushes.Black, new Point(5, 260));
+                e.Graphics.DrawString("CEP: 85856300", new Font("Arial", 5), Brushes.Black, new Point(5, 270));
+                e.Graphics.DrawString($"Itens do pedido", new Font("Arial", 5, FontStyle.Bold), Brushes.Black, new Point(5, 290));
+                e.Graphics.DrawString($"Descrição", new Font("Arial", 5, FontStyle.Italic), Brushes.Black, new Point(50, 300));
+                e.Graphics.DrawString($"Qtde", new Font("Arial", 5, FontStyle.Italic), Brushes.Black, new Point(120, 300));
+                e.Graphics.DrawString($"Valor Total", new Font("Arial", 5, FontStyle.Italic), Brushes.Black, new Point(190, 300));
                 for (int i = 0; i < 4; i++)
                 {
-                    e.Graphics.DrawString($"Django Clássico", new Font("Arial", 7), Brushes.Black, new Point(5, (175 + i * 15)));
-                    e.Graphics.DrawString($"1", new Font("Arial", 7), Brushes.Black, new Point(127, (175 + i * 15)));
-                    e.Graphics.DrawString($"R$24,00", new Font("Arial", 7), Brushes.Black, new Point(195, (175 + i * 15)));
+                    e.Graphics.DrawString($"Django Clássico", new Font("Arial", 5), Brushes.Black, new Point(5, (310 + i * 15)));
+                    e.Graphics.DrawString($"1", new Font("Arial", 5), Brushes.Black, new Point(127, (310 + i * 15)));
+                    e.Graphics.DrawString($"R$24,00", new Font("Arial", 5), Brushes.Black, new Point(195, (310 + i * 15)));
                 }
-                e.Graphics.DrawString("________________________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 270));
-                e.Graphics.DrawString($"Valor do pedido:                           R$ 24.00", new Font("Arial", 8), Brushes.Black, new Point(5, 290));
-                e.Graphics.DrawString($"Taxa de Entrega:                          R$ 7.00", new Font("Arial", 8), Brushes.Black, new Point(5, 305));
-                e.Graphics.DrawString($"Total:                                             R$ 31.00", new Font("Arial", 8), Brushes.Black, new Point(5, 320));
-                e.Graphics.DrawString($"Valor pago pelo cliente:                R$ 31.00", new Font("Arial", 8), Brushes.Black, new Point(5, 335));
-
-                e.Graphics.DrawString($"R$ 31,00 - PGTO COM DINHEIRO", new Font("Arial", 8, FontStyle.Bold), Brushes.Black, new Point(5, 355));
+                e.Graphics.DrawString("+--------------------------------------------------------------------------------------------------+", new Font("Arial", 5), Brushes.Black, new Point(12, 375));
+                e.Graphics.DrawString("| Valor total do pedido: R$20,00                                                                 |", new Font("Arial", 5), Brushes.Black, new Point(13, 385));
+                e.Graphics.DrawString("| Taxa de entrega: R$10,00                                                                        |", new Font("Arial", 5), Brushes.Black, new Point(13, 395));
+                e.Graphics.DrawString("|---------------------------------------------------------------------------------------------------|", new Font("Arial", 5), Brushes.Black, new Point(13, 405));
+                e.Graphics.DrawString("| Cobrar do cliente: R$30,00                                                                      |", new Font("Arial", 5), Brushes.Black, new Point(13, 415));
+                e.Graphics.DrawString("+--------------------------------------------------------------------------------------------------+", new Font("Arial", 5), Brushes.Black, new Point(12, 425));
+                e.Graphics.DrawString("Forma de pagamento", new Font("Arial", 5), Brushes.Black, new Point(5, 445));
+                e.Graphics.DrawString("DINHEIRO", new Font("Arial", 5), Brushes.Black, new Point(5, 455));
+                e.Graphics.DrawString("Observações", new Font("Arial", 5), Brushes.Black, new Point(5, 475));
+                e.Graphics.DrawString("Observaçao do pedido por extenso, podendo ser um texto grande", new Font("Arial", 5), Brushes.Black, new Point(5, 485));
             }
 
             else if (selectedPaperSize == pkCustomSize2) // 58mm => Referência abaixo!
             {
-                
-                e.Graphics.DrawString("Cliente", new Font("Arial", 8, FontStyle.Bold), Brushes.Black, new Point(5, 15));
-                e.Graphics.DrawString("_____________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 16));
-
-                e.Graphics.DrawString($"Telefone:       (85) 98549.6894", new Font("Arial", 6), Brushes.Black, new Point(5, 33));
-                e.Graphics.DrawString($"Nome:           Antonio Paz", new Font("Arial", 6), Brushes.Black, new Point(5, 43));
-
-                e.Graphics.DrawString($"Endereço:     Rua Dom Timóteo, 76", new Font("Arial", 6), Brushes.Black, new Point(5, 58));
-                e.Graphics.DrawString($"Cidade:         Tianguá", new Font("Arial", 6), Brushes.Black, new Point(5, 68));
-                e.Graphics.DrawString($"CEP:              62320480", new Font("Arial", 6), Brushes.Black, new Point(5, 78));
-                e.Graphics.DrawString($"UF:  CE", new Font("Arial", 6), Brushes.Black, new Point(130, 78));
-                e.Graphics.DrawString("==========================", new Font("Arial", 8), Brushes.Black, new Point(0, 88));
-
-                e.Graphics.DrawString($"Itens", new Font("Arial", 7, FontStyle.Bold), Brushes.Black, new Point(5, 98));
-                e.Graphics.DrawString("_____________________", new Font("Arial", 10), Brushes.Black, new Point(5, 97));
-                e.Graphics.DrawString($"Descrição", new Font("Arial", 5, FontStyle.Italic), Brushes.Black, new Point(5, 115));
-                e.Graphics.DrawString($"Qtde", new Font("Arial", 5, FontStyle.Italic), Brushes.Black, new Point(100, 115));
-                e.Graphics.DrawString($"Valor Total", new Font("Arial", 5, FontStyle.Italic), Brushes.Black, new Point(135, 115));
-                e.Graphics.DrawString("_____________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 114));
-                
+                e.Graphics.DrawString("--------------------------------------------------------", new Font("Arial", 7), Brushes.Black, new Point(5, 5));
+                e.Graphics.DrawString("iFood", new Font("Arial", 4), Brushes.Black, new Point(95, 17));
+                e.Graphics.DrawString("+-------------------------------------------------------------------------------------------+", new Font("Arial", 4), Brushes.Black, new Point(6, 25));
+                e.Graphics.DrawString("|                                           PEDIDO #12345                                             |", new Font("Arial", 4), Brushes.Black, new Point(7, 32));
+                e.Graphics.DrawString("|                           LOCALIZADOR DO PEDIDO im2NcXDyVZ                   |", new Font("Arial", 4), Brushes.Black, new Point(7, 42));
+                e.Graphics.DrawString("|                                            ENTREGA PRÓPRIA                                     |", new Font("Arial", 4), Brushes.Black, new Point(7, 52));
+                e.Graphics.DrawString("+-------------------------------------------------------------------------------------------+", new Font("Arial", 4), Brushes.Black, new Point(7, 60));
+                e.Graphics.DrawString("Restaurante: Eazy Teste", new Font("Arial", 4), Brushes.Black, new Point(5, 70));
+                e.Graphics.DrawString("Data: 22/12/2022 15:20:00", new Font("Arial", 4), Brushes.Black, new Point(5, 80));
+                e.Graphics.DrawString("Entrega prevista: 15:50", new Font("Arial", 4), Brushes.Black, new Point(5, 90));
+                e.Graphics.DrawString("Solicite o código de confirmação na hora da entrega", new Font("Arial", 4), Brushes.Black, new Point(5, 100));
+                e.Graphics.DrawString("+------------------------------------------------------------------------------------------+", new Font("Arial", 4), Brushes.Black, new Point(6, 120));
+                e.Graphics.DrawString("|                                                                                                                  |", new Font("Arial", 4), Brushes.Black, new Point(7, 130));
+                e.Graphics.DrawString("|   ** DEIXAR O PEDIDO EM: ENCONTRAR COM O ENTREGADOR **                        |", new Font("Arial", 3), Brushes.Black, new Point(7, 140));
+                e.Graphics.DrawString("|                                                                                                                  |", new Font("Arial", 4), Brushes.Black, new Point(7, 150));
+                e.Graphics.DrawString("+------------------------------------------------------------------------------------------+", new Font("Arial", 4), Brushes.Black, new Point(7, 160));
+                e.Graphics.DrawString("Primeiro pedido na sua loja!", new Font("Arial", 4), Brushes.Black, new Point(5, 180));
+                e.Graphics.DrawString("Dados do cliente", new Font("Arial", 4), Brushes.Black, new Point(5, 200));
+                e.Graphics.DrawString("Nome: Samuel Vilela", new Font("Arial", 4), Brushes.Black, new Point(5, 210));
+                e.Graphics.DrawString("Telefone: +5537999943911", new Font("Arial", 4), Brushes.Black, new Point(5, 220));
+                e.Graphics.DrawString("ID: 11176", new Font("Arial", 4), Brushes.Black, new Point(100, 220));
+                e.Graphics.DrawString("Rua: Henrique Alberto Pepin, 313", new Font("Arial", 4), Brushes.Black, new Point(5, 230));
+                e.Graphics.DrawString("Bairro: Jardim Panorama II", new Font("Arial", 4), Brushes.Black, new Point(5, 240));
+                e.Graphics.DrawString("Cidade: Foz do Iguacu - PR", new Font("Arial", 4), Brushes.Black, new Point(5, 250));
+                e.Graphics.DrawString("CEP: 85856300", new Font("Arial", 4), Brushes.Black, new Point(5, 260));
+                e.Graphics.DrawString($"Itens do pedido", new Font("Arial", 4, FontStyle.Bold), Brushes.Black, new Point(5, 280));
+                e.Graphics.DrawString($"Descrição", new Font("Arial", 4, FontStyle.Italic), Brushes.Black, new Point(12, 290));
+                e.Graphics.DrawString($"Qtde", new Font("Arial", 4, FontStyle.Italic), Brushes.Black, new Point(86, 290));
+                e.Graphics.DrawString($"Valor Total", new Font("Arial", 4, FontStyle.Italic), Brushes.Black, new Point(143, 290));
                 for (int i = 0; i < 4; i++)
                 {
-                    e.Graphics.DrawString($"Django Clássico", new Font("Arial", 5), Brushes.Black, new Point(5, (132 + i * 10)));
-                    e.Graphics.DrawString($"1", new Font("Arial", 5), Brushes.Black, new Point(105, (132 + i * 10)));
-                    e.Graphics.DrawString($"R$24,00", new Font("Arial", 5), Brushes.Black, new Point(140, (132 + i * 10)));
+                    e.Graphics.DrawString($"Django Clássico", new Font("Arial", 4), Brushes.Black, new Point(5, (300 + i * 15)));
+                    e.Graphics.DrawString($"1", new Font("Arial", 4), Brushes.Black, new Point(92, (300 + i * 15)));
+                    e.Graphics.DrawString($"R$24,00", new Font("Arial", 4), Brushes.Black, new Point(145, (300 + i * 15)));
                 }
-                
-                e.Graphics.DrawString("_____________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 200));
-                e.Graphics.DrawString($"Valor do pedido:                           R$ 24.00", new Font("Arial", 6), Brushes.Black, new Point(5, 220));
-                e.Graphics.DrawString($"Taxa de Entrega:                          R$ 7.00", new Font("Arial", 6), Brushes.Black, new Point(5, 230));
-                e.Graphics.DrawString($"Total:                                             R$ 31.00", new Font("Arial", 6), Brushes.Black, new Point(5, 240));
-                e.Graphics.DrawString($"Valor pago pelo cliente:                R$ 31.00", new Font("Arial", 6), Brushes.Black, new Point(5, 250));
-
-                e.Graphics.DrawString($"R$ 31,00 - PGTO COM DINHEIRO", new Font("Arial", 6, FontStyle.Bold), Brushes.Black, new Point(5, 265));
-
-
-                //----------------------------------//
-                //              58mm                // => Trocar pelo de dentro do "Else if"
-                //----------------------------------//
-                //e.Graphics.DrawString("Cliente", new Font("Arial", 8, FontStyle.Bold), Brushes.Black, new Point(5, 15));
-                //e.Graphics.DrawString("_____________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 16));
-
-                //e.Graphics.DrawString($"Telefone:       {orderJson.deliveryAddress.contact_phone}", new Font("Arial", 6), Brushes.Black, new Point(5, 33));
-                //e.Graphics.DrawString($"Nome:           {orderJson.customer.name}", new Font("Arial", 6), Brushes.Black, new Point(5, 43));
-
-                //e.Graphics.DrawString($"Endereço:     {orderJson.deliveryAddress.street}, {orderJson.deliveryAddress.street_number}", new Font("Arial", 6), Brushes.Black, new Point(5, 58));
-                //e.Graphics.DrawString($"Cidade:         {orderJson.deliveryAddress.city}", new Font("Arial", 6), Brushes.Black, new Point(5, 68));
-                //e.Graphics.DrawString($"CEP:              {orderJson.deliveryAddress.zipcode}", new Font("Arial", 6), Brushes.Black, new Point(5, 78));
-                //e.Graphics.DrawString($"UF:  {orderJson.deliveryAddress.state}", new Font("Arial", 6), Brushes.Black, new Point(130, 78));
-                //e.Graphics.DrawString("===========================", new Font("Arial", 8), Brushes.Black, new Point(0, 88));
-
-                //e.Graphics.DrawString($"Itens", new Font("Arial", 7, FontStyle.Bold), Brushes.Black, new Point(5, 98));
-                //e.Graphics.DrawString("_____________________", new Font("Arial", 10), Brushes.Black, new Point(5, 97));
-                //e.Graphics.DrawString($"Descrição", new Font("Arial", 5, FontStyle.Italic), Brushes.Black, new Point(5, 115));
-                //e.Graphics.DrawString($"Qtde", new Font("Arial", 5, FontStyle.Italic), Brushes.Black, new Point(100, 115));
-                //e.Graphics.DrawString($"Valor Total", new Font("Arial", 5, FontStyle.Italic), Brushes.Black, new Point(135, 115));
-                //e.Graphics.DrawString("_____________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 114));
-
-                //for (int i = 0; i < orderJson.items.Count; i++) // Verificar se realmente é para usar o "Count" para detectar quantos pedidos tem
-                //{
-                //    e.Graphics.DrawString($"{orderJson.items[i].name", new Font("Arial", 5), Brushes.Black, new Point(5, (132 + i * 10)));
-                //    e.Graphics.DrawString($"{orderJson.items[i].qty}", new Font("Arial", 5), Brushes.Black, new Point(105, (132 + i * 10)));
-                //    e.Graphics.DrawString($"R${orderJson.items[i].normal_price}", new Font("Arial", 5), Brushes.Black, new Point(140, (132 + i * 10)));
-                //} // Verificar também no caso de um pedido com 2 itens iguais, precisa multiplicar o "normal_price" da linha anterior pelo "qty" ou se esse atributo já é passado corretamente
-
-                //e.Graphics.DrawString("_____________________", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(5, 200));
-                //e.Graphics.DrawString($"Valor do pedido:                           R$ {orderJson.items[0].normal_price}", new Font("Arial", 6), Brushes.Black, new Point(5, 220));
-                //e.Graphics.DrawString($"Taxa de Entrega:                          R$ {orderJson.delivery.charge}", new Font("Arial", 6), Brushes.Black, new Point(5, 230));
-                //e.Graphics.DrawString($"Total:                                             R$ {orderJson.payment.total_w_tax}", new Font("Arial", 6), Brushes.Black, new Point(5, 240));
-                //e.Graphics.DrawString($"Valor pago pelo cliente:                R$ {orderJson.payment.total_w_tax}", new Font("Arial", 6), Brushes.Black, new Point(5, 250));
-
-                //e.Graphics.DrawString($"R$ {orderJson.payment.total_w_tax} - {orderJson.payment.payment_formatted}", new Font("Arial", 6, FontStyle.Bold), Brushes.Black, new Point(5, 265));
+                e.Graphics.DrawString("+------------------------------------------------------------------------------------------+", new Font("Arial", 4), Brushes.Black, new Point(6, 355));
+                e.Graphics.DrawString("| Valor total do pedido: R$20,00                                                                 |", new Font("Arial", 4), Brushes.Black, new Point(7, 365));
+                e.Graphics.DrawString("| Taxa de entrega: R$10,00                                                                        |", new Font("Arial", 4), Brushes.Black, new Point(7, 375));
+                e.Graphics.DrawString("|--------------------------------------------------------------------------------------------|", new Font("Arial", 4), Brushes.Black, new Point(7, 385));
+                e.Graphics.DrawString("| Cobrar do cliente: R$30,00                                                                       |", new Font("Arial", 4), Brushes.Black, new Point(7, 395));
+                e.Graphics.DrawString("+------------------------------------------------------------------------------------------+", new Font("Arial", 4), Brushes.Black, new Point(7, 405));
+                e.Graphics.DrawString("Forma de pagamento", new Font("Arial", 4), Brushes.Black, new Point(5, 415));
+                e.Graphics.DrawString("DINHEIRO", new Font("Arial", 4), Brushes.Black, new Point(5, 425));
+                e.Graphics.DrawString("Observações", new Font("Arial", 4), Brushes.Black, new Point(5, 445));
+                e.Graphics.DrawString("Observaçao do pedido por extenso, podendo ser um texto grande", new Font("Arial", 3), Brushes.Black, new Point(5, 455));
             }
         }
 

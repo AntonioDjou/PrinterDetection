@@ -37,7 +37,7 @@ namespace PrinterDetection
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.PrintSizeLbl = new System.Windows.Forms.Label();
             this.comboPaperSize = new System.Windows.Forms.ComboBox();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.OrdersDataGridView = new System.Windows.Forms.DataGridView();
@@ -109,14 +109,16 @@ namespace PrinterDetection
             this.comboBox1.Size = new System.Drawing.Size(325, 25);
             this.comboBox1.TabIndex = 5;
             // 
-            // label2
+            // PrintSizeLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 352);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 17);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Tamanho da impressão:";
+            this.PrintSizeLbl.AutoSize = true;
+            this.PrintSizeLbl.BackColor = System.Drawing.Color.Transparent;
+            this.PrintSizeLbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrintSizeLbl.Location = new System.Drawing.Point(41, 352);
+            this.PrintSizeLbl.Name = "PrintSizeLbl";
+            this.PrintSizeLbl.Size = new System.Drawing.Size(155, 17);
+            this.PrintSizeLbl.TabIndex = 6;
+            this.PrintSizeLbl.Text = "Tamanho da impressão:";
             // 
             // comboPaperSize
             // 
@@ -159,7 +161,7 @@ namespace PrinterDetection
             this.Controls.Add(this.OrdersDataGridView);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.comboPaperSize);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.PrintSizeLbl);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.printButton);
             this.Controls.Add(this.lblImpressoraPadrao);
@@ -183,7 +185,7 @@ namespace PrinterDetection
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label PrintSizeLbl;
         private System.Windows.Forms.ComboBox comboPaperSize;
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.DataGridView OrdersDataGridView;

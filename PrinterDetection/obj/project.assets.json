@@ -503,20 +503,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\khese\\.nuget\\packages\\": {}
+    "C:\\Users\\netod\\.nuget\\packages\\": {},
+    "D:\\Microsoft Visual Studio 2019\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\khese\\source\\repos\\PrinterDetection\\PrinterDetection\\PrinterDetection.csproj",
+      "projectUniqueName": "D:\\Projetos\\vs19\\PrinterDetection\\PrinterDetection\\PrinterDetection.csproj",
       "projectName": "PrinterDetection",
-      "projectPath": "C:\\Users\\khese\\source\\repos\\PrinterDetection\\PrinterDetection\\PrinterDetection.csproj",
-      "packagesPath": "C:\\Users\\khese\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\khese\\source\\repos\\PrinterDetection\\PrinterDetection\\obj\\",
+      "projectPath": "D:\\Projetos\\vs19\\PrinterDetection\\PrinterDetection\\PrinterDetection.csproj",
+      "packagesPath": "C:\\Users\\netod\\.nuget\\packages\\",
+      "outputPath": "D:\\Projetos\\vs19\\PrinterDetection\\PrinterDetection\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Microsoft Visual Studio 2019\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\khese\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\netod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -560,12 +568,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.1.22, 3.1.22]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -574,7 +576,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.415\\RuntimeIdentifierGraph.json"
       }
     }
   }
